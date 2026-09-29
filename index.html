@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MataTani — Pertanian Cerdas, Panen Berkualitas</title>
+    <meta name="theme-color" content="#143823" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="description" content="Diagnosis penyakit tanaman dan kelembapan tanah secara cerdas dan akurat dengan AI Vision. Lindungi panen Anda secara berkelanjutan." />
+    <meta property="og:title" content="MataTani — Pertanian Cerdas, Panen Berkualitas" />
+    <meta property="og:description" content="Diagnosis penyakit tanaman dan kelembapan tanah berbasis AI Vision secara cepat, akurat, dan terstruktur." />
+    <meta property="og:type" content="website" />
+
+    <!-- Google Fonts: Plus Jakarta Sans & Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      #app-pre-splash {
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #07150C;
+        background-image: radial-gradient(circle at 50% 38%, rgba(20, 83, 45, 0.45) 0%, rgba(11, 34, 21, 0.95) 55%, #050E08 100%);
+        color: #ffffff;
+        font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+        transition: opacity 0.5s ease, visibility 0.5s;
+      }
+      .pre-splash-pulse {
+        width: 80px;
+        height: 80px;
+        border-radius: 24px;
+        background: linear-gradient(135deg, #143823, #0D2919);
+        border: 1px solid rgba(52, 211, 153, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 35px rgba(16, 185, 129, 0.25);
+        animation: prePulse 2s infinite ease-in-out;
+        margin-bottom: 20px;
+      }
+      @keyframes prePulse {
+        0%, 100% { transform: scale(1); opacity: 0.9; }
+        50% { transform: scale(1.06); opacity: 1; filter: drop-shadow(0 0 16px rgba(52,211,153,0.5)); }
+      }
+      .pre-splash-title {
+        font-size: 26px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin: 0;
+      }
+      .pre-splash-title span {
+        color: #34D399;
+      }
+      .pre-splash-sub {
+        font-size: 13px;
+        color: rgba(167, 243, 208, 0.8);
+        margin: 6px 0 28px 0;
+        letter-spacing: 0.05em;
+      }
+      .pre-splash-loader {
+        width: 140px;
+        height: 4px;
+        background: rgba(6, 78, 59, 0.6);
+        border-radius: 999px;
+        overflow: hidden;
+        position: relative;
+      }
+      .pre-splash-bar {
+        position: absolute;
+        top: 0;
+        left: -50%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(90deg, #10B981, #34D399, #A7F3D0);
+        border-radius: 999px;
+        animation: preLoad 1.2s infinite ease-in-out;
+      }
+      @keyframes preLoad {
+        0% { left: -50%; width: 30%; }
+        50% { left: 35%; width: 45%; }
+        100% { left: 100%; width: 30%; }
+      }
+    </style>
+  </head>
+  <body class="bg-[#FCFDFD] text-slate-800 antialiased selection:bg-emerald-100 selection:text-[#143823]">
+    <!-- Instant First-Paint Splash Overlay (sebelum JS selesai diunduh & dieksekusi) -->
+    <div id="app-pre-splash">
+      <div class="pre-splash-pulse">
+        <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 20h10" />
+          <path d="M10 20c5.5-2.5.8-6.4 3-10" />
+          <path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z" />
+          <path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z" />
+        </svg>
+      </div>
+      <h1 class="pre-splash-title">Mata<span>Tani</span></h1>
+      <p class="pre-splash-sub">Pertanian Cerdas · Panen Berkualitas</p>
+      <div class="pre-splash-loader">
+        <div class="pre-splash-bar"></div>
+      </div>
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
